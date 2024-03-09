@@ -1,0 +1,21 @@
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.5, 0, 1, 0)
+frame.Position = UDim2.new(0.25, 0, 0, 0)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BorderSizePixel = 5
+frame.BorderColor3 = Color3.fromRGB(255, 192, 203) -- Pembe çizgi
+frame.Visible = true
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+
+local repColor = Color3.fromRGB(255, 0, 255) -- Başlangıç rep rengi
+local endColor = Color3.fromRGB(128, 0, 128) -- Bitiş rep rengi
+
+for i = 1, 100 do
+	frame.BackgroundColor3 = repColor:Lerp(endColor, i/100)
+	wait(0.1)
+end
